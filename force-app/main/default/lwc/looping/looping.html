@@ -1,0 +1,64 @@
+<template>
+    <lightning-card title="for:each loop with array of objects">
+        <div class="slds-var-m-around_medium">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th>
+                            <div class="slds-truncate" title="S.No">S.No</div>
+                        </th>
+                        <th>
+                            <div class="slds-truncate" title="Company">Company</div>
+                        </th>
+                        <th>
+                            <div class="slds-truncate" title="CEO Name">CEO Name</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={ceoList} for:item="ceo">
+                            <tr key={ceo.id}>
+                                <td data-label="S.No">
+                                    <div class="slds-truncate" title={ceo.id}>{ceo.id}</div>
+                                </td>
+                                <td data-label="Company Name">
+                                    <div class="slds-truncate" title={ceo.company}>{ceo.company}</div>
+                                </td>
+                                <td data-label="CEO Name">
+                                    <div class="slds-truncate" title={ceo.name}>{ceo.name}</div>
+                                </td>
+                            </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+    <br>
+    <lightning-card title="Iterator Loop">
+        <div class="slds-var-m-around_medium">
+            <template iterator:it={ceoList}>
+                <div key={it.value.id}>
+                    <ul class="slds-list_dotted">
+                        <template if:true={it.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    List of top companies and there COE's
+                                </strong>
+                            </div>
+                        </template>
+                        <li><strong>{it.value.company} </strong>
+                            {it.value.name}
+                        </li>
+                        <template if:true={it.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    Thanks for reading the List
+                                </strong>
+                            </div>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

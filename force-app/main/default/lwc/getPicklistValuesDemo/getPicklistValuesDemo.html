@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Get PickList Values Demo">
+        <div class="slds-var-m-around_medium">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th>
+                            <div class="slds-truncate" title="Industry">Industry</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Industry">
+                            <div>
+                                <lightning-combobox
+                                name="Industry"
+                                label="Industry"
+                                placeholder="Choose Industry"
+                                value={selectedIndustry}
+                                onchange={handleIndustryChange}
+                                options={industryOptions}></lightning-combobox>
+                                <p>Selected Industry is: {selectedIndustry}</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th>
+                            <div class="slds-truncate" title="Type">Type</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Type">
+                            <div>
+                                <lightning-combobox
+                                name="Type"
+                                label="Type"
+                                placeholder="Choose Type"
+                                value={selectedType}
+                                onchange={handleTypeChange}
+                                options={typeOptions}></lightning-combobox>
+                                <p>Selected Type is: {selectedType}</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

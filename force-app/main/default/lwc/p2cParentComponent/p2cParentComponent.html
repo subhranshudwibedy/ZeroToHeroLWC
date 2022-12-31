@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Parent Component for Input Taking">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label = "Enter First Number:" name="num1" 
+            onchange={ChangeHandler}></lightning-input><br>
+            <lightning-input type="text" label = "Enter Second Number:" name="num2" 
+            onchange={ChangeHandler}></lightning-input>
+
+        <!---Example of Simple Data-->
+            <c-p2c-child-component number1={num1}
+            number2={num2}
+            heading={childHeading}></c-p2c-child-component>
+        </div>
+
+        <!---Example of Complex Data-->
+        <div class="slds-m-bottom_medium">
+            <c-p2c-carousel-component carousel-details={carousel}></c-p2c-carousel-component>
+        </div>
+
+        <!--Example of data passing on action-->
+        <div class="slds-var-m-bottom_medium">
+            <lightning-card title="Parent to Child communication on action">
+                <lightning-input type="number" 
+                label="Enter percentage"
+                onkeyup={ProgressHandler}
+                value={percentage}></lightning-input>
+
+                <c-p2c-progress-component progress={percentage}></c-p2c-progress-component>
+            </lightning-card>
+        </div>
+
+        <!---Example of Calling child Method from parent-->
+        <div class="slds-var-m-bottom_medium">
+            <lightning-card title="Accessing Method From Child">
+                <lightning-button variant="brand" label="Reset Slider" onclick={handleChange}></lightning-button>
+                <c-p2c-slider-component></c-p2c-slider-component>
+            </lightning-card>
+        </div>
+    </lightning-card>
+</template>

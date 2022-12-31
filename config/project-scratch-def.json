@@ -1,0 +1,35 @@
+{
+  "orgName": "LWC SFDC",
+  "edition": "Enterprise",
+  "hasSampleData": true,
+  "features": [
+        "EnableSetPasswordInApi",
+        "Communities",
+        "MultiCurrency" , 
+        "ContactsToMultipleAccounts",
+        "CascadeDelete",
+        "Communities",
+        "PersonAccounts",
+        "StateAndCountryPicklist",
+        "Entitlements",
+        "LiveAgent"
+    ],
+  "settings": {
+    "mobileSettings": {
+        "enableS1EncryptedStoragePref2": true
+    },
+    "lightningExperienceSettings": {
+        "enableS1DesktopEnabled": true
+    },
+    "communitiesSettings": {
+        "enableNetworksEnabled": true
+    },
+      "omniChannelSettings": {
+          "enableOmniChannel": true
+      },
+
+      "caseSettings": {
+          "systemUserEmail": "susarthak31@gmail.com"
+      }
+  }
+}

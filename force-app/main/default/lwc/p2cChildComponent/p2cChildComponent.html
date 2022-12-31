@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title={heading}>
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Sum" name="Sum" onclick={Calculate}></lightning-button>&nbsp;
+            <lightning-button variant="brand" label="Sub" name="Sub" onclick={Calculate}></lightning-button>&nbsp;
+            <lightning-button variant="brand" label="Mul" name="Mul" onclick={Calculate}></lightning-button>&nbsp;
+            <lightning-button variant="brand" label="Div" name="Div" onclick={Calculate}></lightning-button><br>
+            <div class="slds-m-around_medium">
+                {resultedString}
+            </div>
+        </div>
+    </lightning-card>
+</template>

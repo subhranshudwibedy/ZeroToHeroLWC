@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="Get Object Info Adaptor">
+        <div class="slds-card__body slds-card__body_inner">
+            <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+                <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <div class="slds-m-around_medium">
+                        <p><strong>1. Method</strong></p>
+                        <div><strong>Object API Name :</strong> {apiName}</div>
+                        <div><strong>Default Record Type Id :</strong> {defaultRecordTypeId}</div>
+                        <div><strong>Label :</strong> {label}</div>
+                        <div><strong>Label Plural Name :</strong> {labelPlural}</div>
+                    </div>
+                </li>
+                <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <div class="slds-m-around_medium">
+                        <p><strong>2. Property</strong></p>
+                        <template if:true={objectInfoProperty.data}>
+                            <div><strong>Object API Name :</strong> {objectInfoProperty.data.apiName}</div>
+                            <div><strong>Default Record Type Id :</strong> {objectInfoProperty.data.defaultRecordTypeId}</div>
+                            <div><strong>Label :</strong> {objectInfoProperty.data.label}</div>
+                            <div><strong>Label Plural Name :</strong> {objectInfoProperty.data.labelPlural}</div>
+                        </template>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </lightning-card>
+    
+    <lightning-card title="Get Object Infos Adaptor">
+        <div class="slds-m-around_medium">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th>
+                            <div class="slds-truncate" title="Object API Name">Object API Name</div>
+                        </th>
+                        <th>
+                            <div class="slds-truncate" title="Default Record Type Id">Default Record Type Id</div>
+                        </th>
+                        <th>
+                            <div class="slds-truncate" title="Label Plural Name">Label Plural Name</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template if:true={objectInfos}>
+                        <template for:each={objectInfos.results} for:item="obj">
+                            <tr key={obj.result.apiName}>
+                                <td data-label="Object API Name">
+                                    <div class="slds-truncate">{obj.result.apiName}</div>
+                                </td>
+                                <td data-label="Default Record Type Id">
+                                    <div class="slds-truncate">{obj.result.defaultRecordTypeId}</div>
+                                </td>
+                                <td data-label="Label Plural Name">
+                                    <div class="slds-truncate">{obj.result.labelPlural}</div>
+                                </td>
+                            </tr>
+                        </template>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card> 
+</template>
